@@ -9,7 +9,7 @@
 }
 
  .container .card{
-     background-color: #333;
+    backdrop-filter: transparent;
  	width: 330px;
  	height: auto;
  	border-radius: 8px;
