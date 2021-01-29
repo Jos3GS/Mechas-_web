@@ -2,11 +2,8 @@
 <html lang="en">
 <head>
 	<link rel="stylesheet" href="css/Login.css">
-	
 	<meta charset="UTF-8">
 	<title>Home</title>
-	
-	
 </head>
 <body>
 
@@ -27,20 +24,20 @@
 				</div>
 			</div>
 			<div class="contenedor__login_registro">
-				<form id="login" action="" class="formulario__login">
+				<form id="login" class="formulario__login">
 					<h2>Iniciar Sesión</h2>
-					<input class="L_email" type="text" placeholder="Correo Electronico" required type="email">
-					<input class="L_pass" type="password" placeholder="Contraseña" required minlength="8">
-					<button type="submit">Entrar</button>
+					<input id="L_email" type="email" placeholder="Correo Electronico" required type="email">
+					<input id="L_pass" type="password" placeholder="Contraseña" required minlength="8">
+					<button id="Entrar">Entrar</button>
 				</form>
 
-				<form id="registro" action="" class="formulario__registro">
+				<form id="registro" class="formulario__registro">
 					<h2>Registrarse</h2>
-					<input class="R_Name"type="text" placeholder="Nombre Completo" required>
-					<input class="R_email" type="text" placeholder="Correo Electronico" required type="email">
-					<input class="R_User" type="text" placeholder="Nombre de usuario" required minlength="4">
-					<input class="R_pass" type="password" placeholder="Contraseña" required minlength="8">
-					<button type="submit">Registrarse</button>
+					<input id="R_mame"type="text" placeholder="Nombre Completo" required>
+					<input id="R_email" type="email" placeholder="Correo Electronico" required type="email">
+					<input id="R_user" type="text" placeholder="Nombre de usuario" required minlength="4">
+					<input id="R_pass" type="password" placeholder="Contraseña" required minlength="8">
+					<button id="Registrar">Registrarse</button>
 				</form>
 			</div>
 		</div>
@@ -49,7 +46,7 @@
 	
 
 	<script src="js/login.js"></script>
-	<script src="js/vendor/pristine.min.js"></script>
+	<script src="js/bd.js"></script>
 	
 </body>
 </html>
