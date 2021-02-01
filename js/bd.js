@@ -6,18 +6,31 @@ var R_Email = document.getElementById("R_email");
 var R_User = document.getElementById("R_user");
 var R_Pass = document.getElementById("R_pass");
 
-var  User = [R_Pass, R_Name, R_User];
 
-document.getElementById("Registrar").addEventListener("click", Registro)
+document.getElementById("Registrar").addEventListener("click", Registro);
+document.getElementById("Entrar").addEventListener("click", Login);
 
 
 function Registro(){
     if (typeof(localStorage) !== "undefined"){
-        console.log(User);
-        console.log(JSON.stringify(User));
-        localStorage.setItem(R_Email, JSON.stringify(User));
+        localStorage.setItem(R_Email.value, JSON.stringify([R_Pass.value, R_Name.value, R_User.value]));
         alert("Registro Guardado");
+        
     }else{
         alert("El Registro no se ha podido completar, Por favor use otro navegador");
+    }
+}
+
+function Login(){
+    if(typeof(localStorage) != "undefined"){
+        if(L_Pass.value == JSON.parse(localStorage.getItem(L_Email.value))[0]){
+            window.location.replace("Galeria.html");
+            alert("LOGIN EXITOSO!");
+            
+        }else{
+            alert("Algo anda malo manito");
+        }
+    }else{
+        alert("No es posible logearte, por favor intenta con otro navegador");
     }
 }
