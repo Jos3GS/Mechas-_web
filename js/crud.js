@@ -3,6 +3,8 @@ document.getElementById("Borrar").addEventListener("click",AgregarBotones);
 
 document.getElementById("perfil").textContent = localStorage.getItem("temp");
 
+
+
 var numero = 1;
 function SubirFoto(){
     document.getElementById("ArchivoCargado").click();
@@ -61,7 +63,6 @@ function loaded(){
             document.getElementById("ima"+i).removeEventListener("click");
             break;
         }catch(Exception){
-            alert(JSON.parse(localStorage.getItem(i))[0]);
             const recentImageDataUrl = JSON.parse(localStorage.getItem(i))[0];
             var divi = document.createElement("div");
             divi.setAttribute("class", "card");
@@ -83,6 +84,7 @@ function loaded(){
 
             var buttonn = document.createElement("button");
             buttonn.setAttribute("id","btn"+i);
+            buttonn.setAttribute("onclick","eliminar("+i+");");
             buttonn.setAttribute("class","btn-Borrar");
             buttonn.textContent = "Eliminar";
 
@@ -133,6 +135,7 @@ document.addEventListener("DOMContentLoaded", () =>{
             var buttonn = document.createElement("button");
             buttonn.setAttribute("id","btn"+i);
             buttonn.setAttribute("class","btn-Borrar");
+            buttonn.setAttribute("onclick","eliminar("+i+");");
             buttonn.textContent = "Eliminar";
 
             var contenedor = document.getElementById("conten");
@@ -149,6 +152,9 @@ document.addEventListener("DOMContentLoaded", () =>{
     }
 });
 
+function presiono(){
+    alert("Hola");
+}
 function eliminar(num){
     var n = localStorage.getItem("Numero");
     if((num)==n){
@@ -169,7 +175,11 @@ function eliminar(num){
 }
 
 function BorrarItems(id){
-    document.removeItem("ima"+id);
+    try{
+        document.removeItem("ima"+id);
+    }catch(Exception){
+        
+    }
 }
 
 function nada(){
