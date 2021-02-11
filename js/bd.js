@@ -13,8 +13,12 @@ document.getElementById("Entrar").addEventListener("click", Login);
 
 function Registro(){
     if (typeof(localStorage) !== "undefined"){
-        localStorage.setItem(R_Email.value, JSON.stringify([R_Pass.value, R_Name.value, R_User.value]));
-        alert("Registro Guardado");
+        if(R_Name.value == "" || R_Email.value == "" || R_User.value == "" || R_Pass.value == ""){
+            alert("Revise los datos");
+        }else{
+            localStorage.setItem(R_Email.value, JSON.stringify([R_Pass.value, R_Name.value, R_User.value]));
+            alert("Registro Guardado");
+        }
         
     }else{
         alert("El Registro no se ha podido completar, Por favor use otro navegador");
@@ -24,7 +28,8 @@ function Registro(){
 function Login(){
     if(typeof(localStorage) != "undefined"){
         if(L_Pass.value == JSON.parse(localStorage.getItem(L_Email.value))[0]){
-            window.location.replace("Galeria.html");
+            localStorage.setItem("temp",JSON.parse(localStorage.getItem(L_Email.value))[2]);
+            window.location.replace("/Galeria.html");
             alert("LOGIN EXITOSO!");
             
         }else{

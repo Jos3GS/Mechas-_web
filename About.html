@@ -3,6 +3,7 @@
 <head>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/galeria.css">
+	<link rel="stylesheet" href="css/About.css">
 	<meta charset="UTF-8">
 	<title>Galeria</title>
 </head>
@@ -12,15 +13,89 @@
 			<li><a>Mechas Web</a></li>
 			<li><a href="Galeria.html">Galeria</a></li>
 			<li class="Active"><a href="#">Acerca de</a></li>
-			<li class="toRight"><a href="#">Perfil</a></li>
+			<li class="toRight"><a id="perfil" href="#">Perfil</a></li>
 		</ul>
 
     </nav>
 
     <h1>Acerca De Mechas Web</h1>
+	<div class="container">
+		<div class="div-card">
+			
+			<div class="div-info">
+				<div class="div-tittle">
+					<a>Desarrollador</a>
+				</div>
+				<br>
+				<div class="div-img">
+					<img src="img/Mechas.jpg">
+				</div>
+				<br>
+				<div class="div-desc">
+					<a>Mechas, Estudiante de Sistemas, y basicamente realizó este proyecto gracias a 3 litros de cafeina en su cuerpo, el propio estres retenido, y el autodesprecio que me tengo :D</a>
+				</div>
+			</div>
+		</div>
+	</div>
 
-    <p>La Mechas Web es una Web creada por el Mismisimo Mechas, ya que fue un trabajo, entonces le toco hacerla, y Quedo MAMADISIMAAAAAAAAA</p>
+	<h3>Lenguajes Usados</h3>
+
+	<div class="container">
+		<div class="div-card">
+			
+			<div class="div-info">
+				<div class="div-tittle">
+					<a>HTML</a>
+				</div>
+				<br>
+				<div class="div-img">
+					<img src="img/HTML5.png">
+				</div>
+				<br>
+				<div class="div-desc">
+					<a>Usado para la estructura de toda la pagina, este lenguaje forma la columna de todo el proyecto</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="div-card">
+			
+			<div class="div-info">
+				<div class="div-tittle">
+					<a>CSS</a>
+				</div>
+				<br>
+				<div class="div-img">
+					<img src="img/CSS3.png">
+				</div>
+				<br>
+				<div class="div-desc">
+					<a>Usado Para darle el diseño a la pagina y poder tener un diseño que se mantenga mientras el usuario navegue en la web</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="div-card">
+			
+			<div class="div-info">
+				<div class="div-tittle">
+					<a>JavaScript</a>
+				</div>
+				<br>
+				<div class="div-img">
+					<img src="img/JS.png">
+				</div>
+				<br>
+				<div class="div-desc">
+					<a>Usado Para la implementacion del localstorage y demas funciones</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<h3>Y pues si que mas quieres jajaj, HASTAAA LA PROCZIMAAAAAAAA!</h3>
 
     <footer>Made By: Mechas <br> 2021 - 1 </footer>
+	<script>document.getElementById("perfil").textContent = localStorage.getItem("temp");</script>
 </body>
 </html>

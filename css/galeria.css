@@ -45,3 +45,16 @@
  	color: white;
  	font-size: 50px;
  }
+
+ .btn-Borrar{
+	padding: 10px 40px;
+    margin-top: 10px;
+	margin-bottom: 10px;
+    border: none;
+    font-size: 14px;
+    background: #e72323;
+    color: white;
+    cursor: pointer;
+    outline: none;
+	display:none;
+ }
