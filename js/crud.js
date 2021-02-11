@@ -29,17 +29,17 @@ window.addEventListener("load",function(){
         lector.addEventListener("load",() => {
             
             if(localStorage.getItem("Numero") == null){
-                localStorage.setItem(numero, lector.result);
+                localStorage.setItem(numero, JSON.stringify([lector.result, localStorage.getItem("temp")]));
                 numero++;
                 localStorage.setItem("Numero", numero);
 
             }else if(localStorage.getItem("Numero") != null){
                 numero = localStorage.getItem("Numero");
-                localStorage.setItem(numero, lector.result);
+                localStorage.setItem(numero, JSON.stringify([lector.result, localStorage.getItem("temp")]));
                 numero++;
                 localStorage.setItem("Numero",numero);
             }
-
+            
             loaded();
             
         });
@@ -61,11 +61,12 @@ function loaded(){
             document.getElementById("ima"+i).removeEventListener("click");
             break;
         }catch(Exception){
-            const recentImageDataUrl = localStorage.getItem(i);
+            alert(JSON.parse(localStorage.getItem(i))[0]);
+            const recentImageDataUrl = JSON.parse(localStorage.getItem(i))[0];
             var divi = document.createElement("div");
             divi.setAttribute("class", "card");
             divi.setAttribute("id","ima"+(i));
-            divi.setAttribute("Autor",localStorage.getItem("temp"));
+            divi.setAttribute("Autor",JSON.parse(localStorage.getItem(i))[1]);
             
 
             var Imag = document.createElement("img");
@@ -78,7 +79,7 @@ function loaded(){
             pp.textContent = "Subido por: ";
 
             var aa = document.createElement("a");
-            aa.textContent = divi.getAttribute("Autor");
+            aa.textContent = JSON.parse(localStorage.getItem(i))[1];
 
             var buttonn = document.createElement("button");
             buttonn.setAttribute("id","btn"+i);
@@ -110,11 +111,11 @@ document.addEventListener("DOMContentLoaded", () =>{
             document.getElementById("ima"+i).removeEventListener("click");
             break;
         }catch(Exception){
-            const recentImageDataUrl = localStorage.getItem(i);
+            const recentImageDataUrl = JSON.parse(localStorage.getItem(i))[0];
             var divi = document.createElement("div");
             divi.setAttribute("class", "card");
             divi.setAttribute("id","ima"+(i));
-            divi.setAttribute("Autor",localStorage.getItem("temp"));
+            divi.setAttribute("Autor",JSON.parse(localStorage.getItem(i))[1]);
             
 
             var Imag = document.createElement("img");
@@ -127,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () =>{
             pp.textContent = "Subido por: ";
 
             var aa = document.createElement("a");
-            aa.textContent = localStorage.getItem("temp");
+            aa.textContent = JSON.parse(localStorage.getItem(i))[1];
 
             var buttonn = document.createElement("button");
             buttonn.setAttribute("id","btn"+i);
